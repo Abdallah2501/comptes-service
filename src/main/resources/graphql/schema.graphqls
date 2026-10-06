@@ -1,0 +1,21 @@
+type Query {
+    compteList: [Compte]
+    compteById(id: ID): Compte
+}
+
+type Mutation {
+    saveCompte(compte: CompteRequest): Compte
+    deleteCompte(id: ID): Boolean
+}
+
+type Compte {
+    id: ID
+    solde: Float
+    dateCreation: String
+    type: String
+}
+
+input CompteRequest {
+    solde: Float
+    type: String
+}
